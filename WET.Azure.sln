@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31004.235
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WET.Azure.lib", "WET.Azure.lib\WET.Azure.lib.csproj", "{0DFC65B7-ECCA-4490-8DB4-39528F96C774}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Debug|x64 = Debug|x64
+		Release|Any CPU = Release|Any CPU
+		Release|x64 = Release|x64
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{0DFC65B7-ECCA-4490-8DB4-39528F96C774}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0DFC65B7-ECCA-4490-8DB4-39528F96C774}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0DFC65B7-ECCA-4490-8DB4-39528F96C774}.Debug|x64.ActiveCfg = Debug|x64
+		{0DFC65B7-ECCA-4490-8DB4-39528F96C774}.Debug|x64.Build.0 = Debug|x64
+		{0DFC65B7-ECCA-4490-8DB4-39528F96C774}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0DFC65B7-ECCA-4490-8DB4-39528F96C774}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0DFC65B7-ECCA-4490-8DB4-39528F96C774}.Release|x64.ActiveCfg = Release|x64
+		{0DFC65B7-ECCA-4490-8DB4-39528F96C774}.Release|x64.Build.0 = Release|x64
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {AE900B28-8362-45F2-87A7-6854FAD33A14}
+	EndGlobalSection
+EndGlobal
