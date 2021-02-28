@@ -3,7 +3,7 @@
   <PropertyGroup>
     <TargetFramework>net5.0</TargetFramework>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
-    <Version>0.3.1</Version>
+    <Version>0.3.2</Version>
     <Authors>Jarred Capellman</Authors>
     <Description>Azure Service Implementations for the WET Library to store event data into various Azure services</Description>
     <PackageProjectUrl>https://github.com/jcapellman/WET.Azure</PackageProjectUrl>
@@ -20,7 +20,7 @@
     <PackageReference Include="Azure.Messaging.EventHubs" Version="5.3.0" />
     <PackageReference Include="Azure.Messaging.ServiceBus" Version="7.1.0" />
     <PackageReference Include="Microsoft.Azure.Cosmos" Version="3.16.0" />
-    <PackageReference Include="WET.lib" Version="0.5.3" />
+    <PackageReference Include="WET.lib" Version="0.5.4" />
   </ItemGroup>
 
   <ItemGroup>
