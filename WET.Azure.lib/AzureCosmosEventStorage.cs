@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Net;
 using System.Reflection;
@@ -52,6 +53,31 @@ namespace WET.Azure.lib
         public void Shutdown()
         {
             _cosmosClient.Dispose();
+        }
+
+        public async Task<bool> WriteBatchEventAsync(List<ETWEventContainerItem> batch)
+        {
+            var error = false;
+
+            foreach (var item in batch)
+            {
+                var partitionKeyValue = _propertyKey.GetValue(item);
+
+                if (partitionKeyValue == null)
+                {
+                    throw new ArgumentOutOfRangeException(nameof(item),
+                        $"Could not extract {_propertyKey.Name} from the item");
+                }
+
+                var result = await _container.CreateItemAsync(item, new PartitionKey(partitionKeyValue.ToString()));
+
+                if (result.StatusCode != HttpStatusCode.OK)
+                {
+                    error = true;
+                }
+            }
+
+            return error;
         }
     }
 }

@@ -1,4 +1,5 @@
-﻿using System.Text;
+﻿using System.Collections.Generic;
+using System.Text;
 using System.Threading.Tasks;
 
 using Azure.Messaging.EventHubs;
@@ -38,6 +39,23 @@ namespace WET.Azure.lib
         public void Shutdown()
         {
             // Not needed
+        }
+
+        public async Task<bool> WriteBatchEventAsync(List<ETWEventContainerItem> batch)
+        {
+            await using var producerClient = new EventHubProducerClient(_connectionString, _eventHubName);
+
+            using var eventBatch = await producerClient.CreateBatchAsync();
+
+            foreach (var item in batch)
+            {
+                eventBatch.TryAdd(
+                    new EventData(Encoding.UTF8.GetBytes(System.Text.Json.JsonSerializer.Serialize(item))));
+            }
+
+            await producerClient.SendAsync(eventBatch);
+
+            return true;
         }
     }
 }

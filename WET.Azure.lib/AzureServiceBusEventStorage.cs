@@ -1,4 +1,6 @@
-﻿using System.Threading.Tasks;
+﻿using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
 
 using Azure.Messaging.ServiceBus;
 
@@ -36,6 +38,20 @@ namespace WET.Azure.lib
         public void Shutdown()
         {
             // Nothing to do since tear down happens automatically
+        }
+
+        public async Task<bool> WriteBatchEventAsync(List<ETWEventContainerItem> batch)
+        {
+            await using var client = new ServiceBusClient(_connectionString);
+
+            var sender = client.CreateSender(_queueName);
+
+            foreach (var message in batch.Select(item => new ServiceBusMessage(System.Text.Json.JsonSerializer.Serialize(item))))
+            {
+                await sender.SendMessageAsync(message);
+            }
+
+            return true;
         }
     }
 }
