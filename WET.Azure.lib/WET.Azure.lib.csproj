@@ -17,9 +17,9 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="Azure.Messaging.EventHubs" Version="5.4.0" />
+    <PackageReference Include="Azure.Messaging.EventHubs" Version="5.4.1" />
     <PackageReference Include="Azure.Messaging.ServiceBus" Version="7.1.2" />
-    <PackageReference Include="Microsoft.Azure.Cosmos" Version="3.17.1" />
+    <PackageReference Include="Microsoft.Azure.Cosmos" Version="3.19.0" />
     <PackageReference Include="WET.lib" Version="0.6.1" />
   </ItemGroup>
 
